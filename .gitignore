@@ -6,7 +6,7 @@ node_modules/
 .idea/
 
 # Внутренняя стратегия — не публиковать
-CONTEXT-GTA6.md
+CONTEXT-blipguides.com.md
 
 # тестовые артефакты песочницы (нельзя удалить, только игнор)
 _r2
