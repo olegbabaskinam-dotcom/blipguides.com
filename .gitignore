@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+node_modules/
+*.log
+.vscode/
+.idea/
+
+# Внутренняя стратегия — не публиковать
+CONTEXT-GTA6.md
