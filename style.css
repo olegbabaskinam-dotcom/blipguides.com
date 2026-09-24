@@ -71,3 +71,7 @@ nav a,nav span{font-size:12px;padding:6px 8px}
 .progress{display:flex;align-items:center;gap:12px;font:700 13px var(--mono)}.bar2{flex:1;height:8px;background:var(--line)}.bar2 i{display:block;height:100%;width:0;background:var(--acc);transition:width .3s}
 .q{margin:16px 0}.q>b{display:block;margin-bottom:4px}.res{margin-top:16px}.res h3{font:800 22px var(--head);color:var(--acc)}
 @media(max-width:900px){.zone{grid-template-columns:1fr}.zone>div{padding:0 14px 14px}.timers{grid-template-columns:1fr}}
+/* v4: seo */
+h1.tag{font:700 12px var(--mono);color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin:0}
+.big{font:800 clamp(30px,4vw,54px)/1.08 var(--head);margin:12px 0;color:var(--text)}
+footer p{margin:6px 0}
