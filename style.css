@@ -84,3 +84,6 @@ blockquote{margin:18px 0;padding:10px 18px;border-left:3px solid var(--line);fon
 /* v6: fix растянутых фото (26.09) — атрибуты width/height + width:100% без height:auto растягивали картинки */
 img{height:auto}
 .zone img,.reg img{height:100%}
+.tile div{min-width:0;width:100%}
+table{width:100%}td,th{overflow-wrap:anywhere;hyphens:auto}
+@media(max-width:600px){td,th{padding:8px 6px;font-size:14px}}
