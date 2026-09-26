@@ -75,3 +75,9 @@ nav a,nav span{font-size:12px;padding:6px 8px}
 h1.tag{font:700 12px var(--mono);color:var(--acc);letter-spacing:2px;text-transform:uppercase;margin:0}
 .big{font:800 clamp(30px,4vw,54px)/1.08 var(--head);margin:12px 0;color:var(--text)}
 footer p{margin:6px 0}
+/* v5: storytelling + quiz (26.09) */
+.scene{border-left:3px solid var(--acc);background:linear-gradient(90deg,rgba(198,69,240,.12),transparent);padding:14px 18px;margin:20px 0}.scene b,.fact b{font:700 11px var(--mono);text-transform:uppercase;letter-spacing:2px;color:var(--acc)}.scene p{margin:6px 0 0;font-style:italic;font-size:1.05em}
+.fact{border:1px dashed #F5B83D;background:var(--bg2);padding:14px 18px;margin:20px 0}.fact b{color:#F5B83D}.fact p{margin:6px 0 0}
+blockquote{margin:18px 0;padding:10px 18px;border-left:3px solid var(--line);font:600 1.1em/1.45 var(--head)}blockquote p{margin:0}blockquote cite{display:block;margin-top:6px;font:500 12px var(--mono);color:var(--muted);font-style:normal}
+.rqq{border:1px solid var(--line);background:var(--bg2);padding:14px;margin:16px 0}.rqq>b{font:700 12px var(--mono);color:var(--muted)}.rqq img{width:100%;margin:8px 0;border:1px solid var(--line)}
+.rqo{display:grid;grid-template-columns:1fr 1fr;gap:8px}.rqo button{font:600 15px var(--body,inherit);padding:12px;background:var(--bg);color:var(--text);border:1px solid var(--line);cursor:pointer;text-align:left}.rqo button:hover{border-color:var(--acc)}.rqo button.ok{background:#2FBF71;color:#0b1a12;border-color:#2FBF71}.rqo button.no{background:#E5484D;color:#fff;border-color:#E5484D}.rqt{margin:10px 0 0;color:var(--muted)}.rqt:empty{display:none}
