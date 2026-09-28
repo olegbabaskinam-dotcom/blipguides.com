@@ -87,3 +87,11 @@ img{height:auto}
 .tile div{min-width:0;width:100%}
 table{width:100%}td,th{overflow-wrap:anywhere;hyphens:auto}
 @media(max-width:600px){td,th{padding:8px 6px;font-size:14px}}
+
+/* v6 соцсети */
+.soc{display:flex;gap:6px;flex:none}.soc a{width:32px;height:32px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--muted);text-decoration:none}.soc a:hover{color:#fff;background:var(--acc);border-color:var(--acc)}
+.soc-f{margin-bottom:10px}
+@media(min-width:901px) and (max-width:1250px){.bar>.soc{display:none}}
+@media(max-width:900px){.bar>.soc{margin-left:auto}}
+.socbox{margin:28px 0;padding:18px;border:1px solid var(--acc);background:var(--bg2)}.socbox b{font:700 16px var(--head)}.socbox p{margin:6px 0 12px;color:var(--muted)}
+.sbtn{display:inline-flex;align-items:center;gap:8px;margin:0 8px 8px 0;padding:8px 14px;border:1px solid var(--line);font:500 13px var(--mono);color:var(--text);text-decoration:none}.sbtn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
