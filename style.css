@@ -95,3 +95,5 @@ table{width:100%}td,th{overflow-wrap:anywhere;hyphens:auto}
 @media(max-width:900px){.bar>.soc{margin-left:auto}}
 .socbox{margin:28px 0;padding:18px;border:1px solid var(--acc);background:var(--bg2)}.socbox b{font:700 16px var(--head)}.socbox p{margin:6px 0 12px;color:var(--muted)}
 .sbtn{display:inline-flex;align-items:center;gap:8px;margin:0 8px 8px 0;padding:8px 14px;border:1px solid var(--line);font:500 13px var(--mono);color:var(--text);text-decoration:none}.sbtn:hover{background:var(--acc);border-color:var(--acc);color:#fff}
+/* v7 чек-лист занятий */
+.acts{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}.acts .act{display:block;position:relative;border:1px solid var(--line);background:var(--bg2);cursor:pointer}.acts .act input{position:absolute;top:10px;left:10px;width:22px;height:22px;accent-color:var(--acc);z-index:2}.acts .act img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}.acts .act span{display:block;padding:8px 10px}.acts .act em{display:block;font:500 12px var(--mono);color:var(--muted);font-style:normal}.acts .act:has(input:checked){border-color:var(--acc)}
