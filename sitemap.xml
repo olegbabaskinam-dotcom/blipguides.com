@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>https://blipguides.com/</loc><lastmod>2026-09-29</lastmod><priority>1.0</priority></url>
+  <url><loc>https://blipguides.com/karta/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://blipguides.com/razbory/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
+  <url><loc>https://blipguides.com/novosti/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://blipguides.com/spravochnik/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://blipguides.com/svodka/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://blipguides.com/sluhi/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
@@ -10,7 +13,6 @@
   <url><loc>https://blipguides.com/mify/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://blipguides.com/instrumenty/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://blipguides.com/ob-igre/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
-  <url><loc>https://blipguides.com/karta/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://blipguides.com/personazhi/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://blipguides.com/transport/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
   <url><loc>https://blipguides.com/oruzhie/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority></url>
