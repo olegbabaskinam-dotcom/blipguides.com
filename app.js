@@ -60,7 +60,7 @@ if(G){
     G.querySelector('.g-end').hidden=true; G.querySelector('.g-stage').hidden=false; ask()})}
   function ask(){cur=round[qi];
     G.querySelector('.g-score').textContent='Вопрос '+(qi+1)+' из '+round.length+' · угадано '+score;
-    G.querySelector('.g-q').innerHTML='<p><span class="g-l g-lg">В игре:</span> '+esc(cap(cur.gq))+'</p><p><span class="g-l g-lr">В жизни:</span> '+esc(cap(cur.rq))+'</p><p class="g-ask">Насколько Rockstar скопировала?</p>';
+    G.querySelector('.g-q').innerHTML='<div class="g-row"><p><span class="g-l g-lg">В игре:</span> <b>'+esc(cap(cur.gq))+'</b></p><p class="g-ctx">'+esc(cur.gd)+'</p></div><div class="g-row"><p><span class="g-l g-lr">В жизни:</span> <b>'+esc(cap(cur.rq))+'</b></p><p class="g-ctx">'+esc(cur.rd)+'</p></div><p class="g-ask">Насколько Rockstar скопировала?</p>';
     G.querySelector('.g-img').innerHTML='<figure><img src="'+BASE+'img/'+cur.g+'.jpg" alt="GTA 6: '+esc(cur.gq)+'"><figcaption>GTA 6</figcaption></figure><figure><img src="'+BASE+'img/'+cur.r+'.jpg" alt="Прототип: '+esc(cur.rq)+'"><figcaption>Прототип</figcaption></figure>';
     G.querySelector('.g-ans').hidden=true; G.querySelectorAll('.g-opts button').forEach(function(b){b.disabled=false;b.className=''});
   }
@@ -77,7 +77,7 @@ if(G){
     var ok=b.dataset.v===cur.v; if(ok)score++;
     G.querySelectorAll('.g-opts button').forEach(function(x){x.disabled=true; if(x.dataset.v===cur.v)x.className='right'; else if(x===b)x.className='wrong'});
     var a=G.querySelector('.g-ans'); a.hidden=false; var last=qi>=round.length-1;
-    a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Это «<b style="color:'+VC[cur.v]+'">'+esc(cur.vn)+'</b>».</p><p>'+esc(cur.n)+'</p><div class="g-btns"><a class="btn btn2" href="'+BASE+cur.u+'">Читать сравнение →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
+    a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Правильный ответ — «<b style="color:'+VC[cur.v]+'">'+esc(cur.vn)+'</b>».</p><p class="g-why"><b>Почему «'+esc(cur.vn)+'»:</b> '+esc(cur.why)+'</p><div class="g-btns"><a class="btn btn2" href="'+BASE+cur.u+'">Читать сравнение →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
     G.querySelector('.g-score').textContent='Вопрос '+(qi+1)+' из '+round.length+' · угадано '+score;
     a.querySelector('.g-nx').addEventListener('click',function(){if(last)end(); else{qi++;ask()}});
   });
