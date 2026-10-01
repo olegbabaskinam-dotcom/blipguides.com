@@ -228,3 +228,12 @@ body.srch-on{overflow:hidden}
 @media(max-width:760px){.g-img{grid-template-columns:minmax(0,1fr)}.g-opts{grid-template-columns:repeat(2,minmax(0,1fr))}.rgal{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:480px){.bar .soc{display:none}.bar{gap:10px}}
 @media(max-width:760px){.g-img{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px}.g-q b{font-size:16px}}
+/* игра v2 */
+.g-q p{margin:2px 0;font-size:16px}.g-l{font:700 11px var(--mono);text-transform:uppercase;padding:2px 7px;margin-right:6px;color:#111}.g-lg{background:#E3A6F7}.g-lr{background:#9AD7FF}
+.g-ask{font:800 18px var(--head)!important;margin-top:10px!important}
+.g-img img{aspect-ratio:2/1}
+.g-opts button{display:flex;flex-direction:column;gap:2px;align-items:center}.g-opts button b{font:700 14px var(--mono)}.g-opts button small{font:500 11px var(--mono);color:var(--muted)}
+.g-opts button.right small{color:#111}
+.g-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}.g-btns .btn{margin-top:0;border:0;cursor:pointer}.g-btns .btn2{border:1px solid var(--line)}
+.g-end{text-align:center;padding:20px 0 6px}.g-big{font:800 48px var(--head);margin:0;color:#E3A6F7}.g-msg{font-size:18px;margin:6px 0 14px}.g-end .g-btns{justify-content:center}
+.g-stage[hidden],.g-end[hidden]{display:none}

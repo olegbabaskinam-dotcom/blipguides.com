@@ -50,25 +50,37 @@ if(F){
   apply();
 }
 
-/* игра «Угадай вердикт» */
+/* игра «Скопировали или придумали?»: раунд из 10 вопросов */
 var G=document.querySelector('.game');
 if(G){
-  var score=0, total=0, cur=null, last=[];
-  function pick(d){var pool=d.filter(function(x){return last.indexOf(x.u)<0}); if(!pool.length){last=[];pool=d}
-    var x=pool[Math.floor(Math.random()*pool.length)]; last.push(x.u); if(last.length>Math.min(8,d.length-1))last.shift(); return x}
-  function show(){data(function(d){cur=pick(d);
-    G.querySelector('.g-img').innerHTML='<figure><img src="'+BASE+'img/'+cur.g+'.jpg" alt="Кадр GTA 6"><figcaption>Игра</figcaption></figure><figure><img src="'+BASE+'img/'+cur.r+'.jpg" alt="Реальное фото"><figcaption>Реальность</figcaption></figure>';
-    G.querySelector('.g-q').innerHTML='<b>'+esc(cur.h)+'</b>';
+  var N=10, round=[], qi=0, score=0, cur=null;
+  function cap(t){return t.charAt(0).toUpperCase()+t.slice(1)}
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
+  function start(){data(function(d){round=shuffle(d).slice(0,Math.min(N,d.length)); qi=0; score=0;
+    G.querySelector('.g-end').hidden=true; G.querySelector('.g-stage').hidden=false; ask()})}
+  function ask(){cur=round[qi];
+    G.querySelector('.g-score').textContent='Вопрос '+(qi+1)+' из '+round.length+' · угадано '+score;
+    G.querySelector('.g-q').innerHTML='<p><span class="g-l g-lg">В игре:</span> '+esc(cap(cur.gq))+'</p><p><span class="g-l g-lr">В жизни:</span> '+esc(cap(cur.rq))+'</p><p class="g-ask">Насколько Rockstar скопировала?</p>';
+    G.querySelector('.g-img').innerHTML='<figure><img src="'+BASE+'img/'+cur.g+'.jpg" alt="GTA 6: '+esc(cur.gq)+'"><figcaption>GTA 6</figcaption></figure><figure><img src="'+BASE+'img/'+cur.r+'.jpg" alt="Прототип: '+esc(cur.rq)+'"><figcaption>Прототип</figcaption></figure>';
     G.querySelector('.g-ans').hidden=true; G.querySelectorAll('.g-opts button').forEach(function(b){b.disabled=false;b.className=''});
-  })}
+  }
+  function end(){G.querySelector('.g-stage').hidden=true; var e=G.querySelector('.g-end'); e.hidden=false;
+    var n=round.length, t=score===n?'ты знаешь Флориду лучше Rockstar 🔥':score>=n*0.8?'отлично, ты почти местный во Флориде!':score>=n*0.5?'неплохо, но Rockstar пару раз тебя провела.':'Rockstar обвела тебя вокруг пальца. Попробуй ещё раз!';
+    G.querySelector('.g-score').textContent='Раунд окончен';
+    e.innerHTML='<p class="g-big">'+score+' из '+n+'</p><p class="g-msg">'+cap(t)+'</p><div class="g-btns"><button class="btn g-again" type="button">Сыграть ещё</button><button class="btn btn2 g-share" type="button">Поделиться результатом</button></div>';
+    e.querySelector('.g-again').addEventListener('click',start);
+    e.querySelector('.g-share').addEventListener('click',function(){var txt='Я угадал '+score+' из '+n+' в игре «Скопировали или придумали?» — GTA 6 и реальная жизнь',u=BASE;
+      if(navigator.share){navigator.share({title:'Blip Guides',text:txt,url:u}).catch(function(){})}
+      else if(navigator.clipboard){navigator.clipboard.writeText(txt+' '+u).then(function(){var b=e.querySelector('.g-share');b.textContent='Ссылка скопирована ✓'})}});
+  }
   G.querySelector('.g-opts').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b||!cur||b.disabled)return;
-    var ok=b.dataset.v===cur.v; total++; if(ok)score++;
+    var ok=b.dataset.v===cur.v; if(ok)score++;
     G.querySelectorAll('.g-opts button').forEach(function(x){x.disabled=true; if(x.dataset.v===cur.v)x.className='right'; else if(x===b)x.className='wrong'});
-    var a=G.querySelector('.g-ans'); a.hidden=false;
-    a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Вердикт: <b style="color:'+VC[cur.v]+'">'+esc(cur.vn)+'</b></p><p>'+esc(cur.n)+'</p><a class="btn btn2" href="'+BASE+cur.u+'">Читать сравнение →</a>';
-    G.querySelector('.g-score').textContent='Угадано '+score+' из '+total;
+    var a=G.querySelector('.g-ans'); a.hidden=false; var last=qi>=round.length-1;
+    a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Это «<b style="color:'+VC[cur.v]+'">'+esc(cur.vn)+'</b>».</p><p>'+esc(cur.n)+'</p><div class="g-btns"><a class="btn btn2" href="'+BASE+cur.u+'">Читать сравнение →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
+    G.querySelector('.g-score').textContent='Вопрос '+(qi+1)+' из '+round.length+' · угадано '+score;
+    a.querySelector('.g-nx').addEventListener('click',function(){if(last)end(); else{qi++;ask()}});
   });
-  G.querySelector('.g-next').addEventListener('click',show);
-  show();
+  start();
 }
 })();
