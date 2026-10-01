@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://blipguides.com/</loc><lastmod>2026-09-30</lastmod><priority>1.0</priority></url>
-  <url><loc>https://blipguides.com/mesta/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/mashiny/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/personazhi/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/brendy/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/kultura/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/priroda/</loc><lastmod>2026-09-30</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/</loc><lastmod>2026-10-01</lastmod><priority>1.0</priority></url>
+  <url><loc>https://blipguides.com/mesta/</loc><lastmod>2026-10-01</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/mashiny/</loc><lastmod>2026-10-01</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/personazhi/</loc><lastmod>2026-10-01</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/brendy/</loc><lastmod>2026-10-01</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/kultura/</loc><lastmod>2026-10-01</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/priroda/</loc><lastmod>2026-10-01</lastmod><priority>0.9</priority></url>
   <url><loc>https://blipguides.com/mesta/vice-city-i-maiami/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-0902.jpg</image:loc></image:image></url>
-  <url><loc>https://blipguides.com/mesta/leonida-keys-i-florida-kis/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/leonida-keys-06.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/mesta/leonida-keys-i-florida-kis/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/leonida-keys-01.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/mesta/port-gellhorn-i-zabytoe-poberezhe/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/port-gellhorn-02.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/priroda/grassrivers-i-everglejds/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/grassrivers-05.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/mashiny/aeroglisser/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-1710.jpg</image:loc></image:image></url>
@@ -22,7 +22,14 @@
   <url><loc>https://blipguides.com/priroda/mount-kalaga-i-lesa-floridy/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/mount-kalaga-national-park-04.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/priroda/oleni-leonidy-i-belohvostyy-olen/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/mount-kalaga-national-park-05.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/personazhi/brian-heder-i-kontrabandisty-kis/</loc><lastmod>2026-09-30</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/brian-heder-03.jpg</image:loc></image:image></url>
-  <url><loc>https://blipguides.com/ob-igre/</loc><lastmod>2026-09-30</lastmod><priority>0.5</priority></url>
+  <url><loc>https://blipguides.com/mesta/most-damba-i-venetian-causeway/</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-0856.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/mashiny/krasnyj-kabriolet-i-bmw-e30/</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-0844.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/personazhi/lusiya-i-zhenskie-tyurmy-floridy/</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/lucia-caminos-05.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/brendy/manatees-i-majami-dolfins/</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-1904.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/kultura/muraly-vajs-siti-i-vinvud/</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-1708.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/kultura/samolety-s-bannerami-nad-plyazhem/</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-1828.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/priroda/zelenaya-iguana-leonidy-i-floridy/</loc><lastmod>2026-10-01</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/leonida-keys-06.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/ob-igre/</loc><lastmod>2026-10-01</lastmod><priority>0.5</priority></url>
   <url><loc>https://blipguides.com/ob-igre/data-vyhoda-gta-6/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/jason-and-lucia-01.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/ob-igre/izdaniya-i-ceny/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/jason-and-lucia-04.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/ob-igre/kak-kupit-v-rossii/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/lucia-caminos-08.jpg</image:loc></image:image></url>
@@ -34,5 +41,5 @@
   <url><loc>https://blipguides.com/ob-igre/novye-mekhaniki/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/jason-and-lucia-07.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/ob-igre/faq/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/vice-city-02.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/ob-igre/rasshirennyi-pokaz/</loc><lastmod>2026-09-28</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/ext-1636.jpg</image:loc></image:image></url>
-  <url><loc>https://blipguides.com/o-saite/</loc><lastmod>2026-09-30</lastmod><priority>0.3</priority></url>
+  <url><loc>https://blipguides.com/o-saite/</loc><lastmod>2026-10-01</lastmod><priority>0.3</priority></url>
 </urlset>

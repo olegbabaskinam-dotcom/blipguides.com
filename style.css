@@ -165,3 +165,5 @@ figcaption .side{font:700 11px var(--mono);text-transform:uppercase;padding:2px 
 .hero3 .txt{padding:44px 30px;display:flex;flex-direction:column;justify-content:center}.hero3 .big{font:800 clamp(32px,4.6vw,56px)/1.05 var(--head);margin:8px 0 14px}.hero3 p{color:var(--muted);margin:0}.hcd{margin-top:18px!important;font:500 14px var(--mono)}.hcd b{color:#C645F0}
 @media(max-width:900px){.hero3{grid-template-columns:1fr;min-height:0}.hero3 .txt{padding:28px 16px}}
 .soon{padding:20px;border:1px dashed var(--line);color:var(--muted)}.fabout{font-size:13px;color:var(--muted)}.fabout a{color:var(--muted)}
+
+.ctx .cdate{display:block;margin-top:6px;font:500 12px var(--mono);color:var(--dim);text-transform:none}
