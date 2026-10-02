@@ -53,10 +53,10 @@ if(F){
 /* игра «Скопировали или придумали?»: раунд из 10 вопросов */
 var G=document.querySelector('.game');
 if(G){
-  var N=10, round=[], qi=0, score=0, cur=null;
+  var N=10, round=[], qi=0, score=0, cur=null, cat='';
   function cap(t){return t.charAt(0).toUpperCase()+t.slice(1)}
   function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=a[i];a[i]=a[j];a[j]=t}return a}
-  function start(){data(function(d){round=shuffle(d).slice(0,Math.min(N,d.length)); qi=0; score=0;
+  function start(){data(function(d){if(cat)d=d.filter(function(x){return x.s===cat}); round=shuffle(d).slice(0,Math.min(N,d.length)); qi=0; score=0;
     G.querySelector('.g-end').hidden=true; G.querySelector('.g-stage').hidden=false; ask()})}
   function ask(){cur=round[qi];
     G.querySelector('.g-score').textContent='Вопрос '+(qi+1)+' из '+round.length+' · угадано '+score;
@@ -77,10 +77,13 @@ if(G){
     var ok=b.dataset.v===cur.v; if(ok)score++;
     G.querySelectorAll('.g-opts button').forEach(function(x){x.disabled=true; if(x.dataset.v===cur.v)x.className='right'; else if(x===b)x.className='wrong'});
     var a=G.querySelector('.g-ans'); a.hidden=false; var last=qi>=round.length-1;
-    a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Правильный ответ — «<b style="color:'+VC[cur.v]+'">'+esc(cur.vn)+'</b>».</p><p class="g-why"><b>Почему «'+esc(cur.vn)+'»:</b> '+esc(cur.why)+'</p><div class="g-btns"><a class="btn btn2" href="'+BASE+cur.u+'">Читать сравнение →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
+    a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Правильный ответ — «<b style="color:'+VC[cur.v]+'">'+esc(cur.vn)+'</b>».</p><p class="g-why"><b>Почему «'+esc(cur.vn)+'»:</b> '+esc(cur.why)+'</p>'+(cur.cr?'<p class="g-cr">Реальное фото: '+esc(cur.cr.replace(/^Фото: /,''))+'</p>':'')+'<div class="g-btns"><a class="btn btn2" href="'+BASE+cur.u+'">Читать сравнение →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
     G.querySelector('.g-score').textContent='Вопрос '+(qi+1)+' из '+round.length+' · угадано '+score;
     a.querySelector('.g-nx').addEventListener('click',function(){if(last)end(); else{qi++;ask()}});
   });
+  var GC=G.querySelector('.g-cat');
+  if(GC)GC.addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return; cat=b.dataset.s;
+    GC.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)}); start()});
   start();
 }
 })();

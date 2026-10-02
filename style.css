@@ -241,3 +241,6 @@ body.srch-on{overflow:hidden}
 .g-row p{margin:0}.g-row b{font-weight:700}.g-ctx{color:var(--muted);font-size:14px!important;line-height:1.4;margin-top:4px!important}
 @media(max-width:760px){.g-q{grid-template-columns:1fr}}
 .g-why{font-size:15px;line-height:1.5;margin:4px 0 6px}.g-why b{color:#fff}
+
+/* игра: выбор темы раунда (02.10) */
+.g-cat{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:0 0 14px}.g-cat span{font:700 12px var(--mono);color:var(--mut,#9aa0a6);margin-right:4px}.g-cat button{font:700 12px var(--mono);padding:7px 11px;background:var(--bg);color:var(--text);border:1px solid var(--line);cursor:pointer}.g-cat button.on{background:var(--text);color:var(--bg)}.g-cr{font:12px var(--mono);opacity:.6;margin:6px 0 0}
