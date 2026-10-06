@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://blipguides.com/</loc><lastmod>2026-10-05</lastmod><priority>1.0</priority></url>
-  <url><loc>https://blipguides.com/mesta/</loc><lastmod>2026-10-05</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/mashiny/</loc><lastmod>2026-10-05</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/personazhi/</loc><lastmod>2026-10-05</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/brendy/</loc><lastmod>2026-10-05</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/kultura/</loc><lastmod>2026-10-05</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/priroda/</loc><lastmod>2026-10-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/</loc><lastmod>2026-10-06</lastmod><priority>1.0</priority></url>
+  <url><loc>https://blipguides.com/mesta/</loc><lastmod>2026-10-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/mashiny/</loc><lastmod>2026-10-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/personazhi/</loc><lastmod>2026-10-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/brendy/</loc><lastmod>2026-10-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/kultura/</loc><lastmod>2026-10-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/priroda/</loc><lastmod>2026-10-06</lastmod><priority>0.9</priority></url>
   <url><loc>https://blipguides.com/mesta/vice-city-i-maiami/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-0902.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/mesta/leonida-keys-i-florida-kis/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/leonida-keys-01.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/mesta/port-gellhorn-i-zabytoe-poberezhe/</loc><lastmod>2026-09-29</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/port-gellhorn-02.jpg</image:loc></image:image></url>
@@ -42,7 +42,8 @@
   <url><loc>https://blipguides.com/priroda/alligatory-leonidy-i-floridy/</loc><lastmod>2026-10-03</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/grassrivers-04.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/personazhi/raul-bautista-i-professionalnye-grabiteli-bankov/</loc><lastmod>2026-10-04</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/raul-bautista-01.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/brendy/mamis-grocery-market-i-bodegi-majami/</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-0904.jpg</image:loc></image:image></url>
-  <url><loc>https://blipguides.com/ob-igre/</loc><lastmod>2026-10-05</lastmod><priority>0.5</priority></url>
+  <url><loc>https://blipguides.com/kultura/strim-iz-bagazhnika-i-irl-strimy/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority><image:image><image:loc>https://blipguides.com/img/ext-1824.jpg</image:loc></image:image></url>
+  <url><loc>https://blipguides.com/ob-igre/</loc><lastmod>2026-10-06</lastmod><priority>0.5</priority></url>
   <url><loc>https://blipguides.com/ob-igre/data-vyhoda-gta-6/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/jason-and-lucia-01.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/ob-igre/izdaniya-i-ceny/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/jason-and-lucia-04.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/ob-igre/kak-kupit-v-rossii/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/lucia-caminos-08.jpg</image:loc></image:image></url>
@@ -54,28 +55,28 @@
   <url><loc>https://blipguides.com/ob-igre/novye-mekhaniki/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/jason-and-lucia-07.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/ob-igre/faq/</loc><lastmod>2026-09-24</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/vice-city-02.jpg</image:loc></image:image></url>
   <url><loc>https://blipguides.com/ob-igre/rasshirennyi-pokaz/</loc><lastmod>2026-09-28</lastmod><priority>0.5</priority><image:image><image:loc>https://blipguides.com/img/ext-1636.jpg</image:loc></image:image></url>
-  <url><loc>https://blipguides.com/regiony/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/regiony/vice-city/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/regiony/leonida-keys/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/regiony/grassrivers/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/regiony/port-gellhorn/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/regiony/ambrosia/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/regiony/mount-kalaga/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/o-saite/</loc><lastmod>2026-10-05</lastmod><priority>0.3</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/transport/</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/brendy-i-zavedeniya/</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/zanyatiya/</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/mehaniki/</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/zhivotnye/</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/</loc><lastmod>2026-10-05</lastmod><priority>0.9</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/dzheyson-dyuval/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/lusiya-kaminos/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/kel-hempton/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/brajan-heder/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/bubi-ajk/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/dre-kuan-prist/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/real-dimez/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/spravochnik/personazhi/raul-bautista/</loc><lastmod>2026-10-05</lastmod><priority>0.7</priority></url>
-  <url><loc>https://blipguides.com/sravneniya/</loc><lastmod>2026-10-05</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/regiony/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/regiony/vice-city/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/regiony/leonida-keys/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/regiony/grassrivers/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/regiony/port-gellhorn/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/regiony/ambrosia/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/regiony/mount-kalaga/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/o-saite/</loc><lastmod>2026-10-06</lastmod><priority>0.3</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/transport/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/brendy-i-zavedeniya/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/zanyatiya/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/mehaniki/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/zhivotnye/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/</loc><lastmod>2026-10-06</lastmod><priority>0.9</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/dzheyson-dyuval/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/lusiya-kaminos/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/kel-hempton/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/brajan-heder/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/bubi-ajk/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/dre-kuan-prist/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/real-dimez/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/spravochnik/personazhi/raul-bautista/</loc><lastmod>2026-10-06</lastmod><priority>0.7</priority></url>
+  <url><loc>https://blipguides.com/sravneniya/</loc><lastmod>2026-10-06</lastmod><priority>0.9</priority></url>
 </urlset>
