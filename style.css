@@ -304,3 +304,7 @@ body.srch-on{overflow:hidden}
 .ent p{margin:0;color:var(--text)}
 .erel{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 12px;font:600 13px var(--mono)}.erel em{font-style:normal;color:var(--dim)}.erel a{color:#F5C518}.erel a:hover{text-decoration:underline}
 @media (max-width:700px){.ent{grid-template-columns:1fr}}
+
+/* 16.10: кадр игры 2 не схлопывается при смене вопроса (страница не прыгает) */
+.game2 .g2-img img{aspect-ratio:16/9;height:auto}
+.game,.game2{overflow-anchor:none}

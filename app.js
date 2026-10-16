@@ -64,6 +64,8 @@ function finish(G,score,n,msg,share,again){
     if(navigator.share){navigator.share({title:'Blip Guides',text:share,url:u}).catch(function(){})}
     else if(navigator.clipboard){navigator.clipboard.writeText(share+' '+u).then(function(){e.querySelector('.g-share').textContent='Ссылка скопирована ✓'})}});
 }
+/* после «Следующий вопрос» — вернуть начало игры на экран */
+function toTop(el){var y=el.getBoundingClientRect().top+window.pageYOffset-70; if(Math.abs(window.pageYOffset-y)>40) window.scrollTo({top:y,behavior:'smooth'})}
 /* игры запускаются, только когда блок появился на экране */
 function whenSeen(el,fn){ if(!('IntersectionObserver' in window)) return fn();
   var o=new IntersectionObserver(function(es){ if(es[0].isIntersecting){o.disconnect(); fn()} },{rootMargin:'300px'}); o.observe(el); }
@@ -88,7 +90,7 @@ if(G){
     var a=G.querySelector('.g-ans'); a.hidden=false; var last=qi>=round.length-1;
     a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Правильный ответ — «<b style="color:'+VC[cur.v]+'">'+esc(cur.vn)+'</b>».</p><p class="g-why"><b>Почему «'+esc(cur.vn)+'»:</b> '+esc(cur.why)+'</p>'+(cur.cr?'<p class="g-cr">Реальное фото: '+esc(cur.cr.replace(/^Фото: /,''))+'</p>':'')+'<div class="g-btns"><a class="btn btn2" href="'+BASE+cur.u+'">Читать сравнение →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
     G.querySelector('.g-score').textContent='Вопрос '+(qi+1)+' из '+round.length+' · угадано '+score;
-    a.querySelector('.g-nx').addEventListener('click',function(){if(last)end(); else{qi++;ask()}});
+    a.querySelector('.g-nx').addEventListener('click',function(){this.blur(); if(last)end(); else{qi++;ask()} toTop(G)});
   });
   var GC=G.querySelector('.g-cat');
   if(GC)GC.addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return; cat=b.dataset.s;
@@ -117,7 +119,7 @@ if(H){
     var a=H.querySelector('.g-ans'); a.hidden=false; var last=i2>=R2.length-1;
     a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Это — <b>'+esc(c2.a)+'</b>.</p><p class="g-why">'+esc(c2.d)+'</p><div class="g-btns"><a class="btn btn2" href="'+BASE+c2.u+'">Открыть в справочнике →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
     H.querySelector('.g-score').textContent='Вопрос '+(i2+1)+' из '+R2.length+' · угадано '+s2;
-    a.querySelector('.g-nx').addEventListener('click',function(){if(last)end2(); else{i2++;ask2()}});
+    a.querySelector('.g-nx').addEventListener('click',function(){this.blur(); if(last)end2(); else{i2++;ask2()} toTop(H)});
   });
   function end2(){var n=R2.length, t=s2===n?'ты знаешь Леониду наизусть 🔥':s2>=n*0.8?'отлично, к релизу готов!':s2>=n*0.5?'неплохо — загляни в справочник перед релизом.':'самое время изучить справочник!';
     finish(H,s2,n,t,'Я угадал '+s2+' из '+n+' в игре «Кто или где это?» — справочник GTA 6',start2)}
