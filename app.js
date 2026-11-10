@@ -70,11 +70,21 @@ function toTop(el){var y=el.getBoundingClientRect().top+window.pageYOffset-70; i
 function whenSeen(el,fn){ if(!('IntersectionObserver' in window)) return fn();
   var o=new IntersectionObserver(function(es){ if(es[0].isIntersecting){o.disconnect(); fn()} },{rootMargin:'300px'}); o.observe(el); }
 
+/* свёрнутые игры: «Сыграть» / «Свернуть», состояние в браузере */
+document.querySelectorAll('.gfold').forEach(function(f){var k='bg-fold-'+f.dataset.k,b=f.querySelector('.gbody'),o=f.querySelector('.gopen'),c=f.querySelector('.gclose');
+  function set(v,save){b.hidden=!v; o.hidden=v; if(save)try{localStorage.setItem(k,v?'1':'0')}catch(e){}}
+  var v=false; try{v=localStorage.getItem(k)==='1'}catch(e){} set(v);
+  o.addEventListener('click',function(){set(true,1)}); c.addEventListener('click',function(){set(false,1); toTop(f)});
+});
+function lsGet(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
+function lsSet(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 /* игра 1: «Скопировали или придумали?» */
 var G=document.querySelector('.game1');
 if(G){
   var N=10, round=[], qi=0, score=0, cur=null, cat='';
-  function start(){load(G.dataset.src,function(d){if(cat)d=d.filter(function(x){return x.s===cat}); round=shuffle(d).slice(0,Math.min(N,d.length)); qi=0; score=0;
+  function start(fresh){var st=fresh?null:lsGet('bg-g1');
+    if(st&&st.r&&st.q<st.r.length){round=st.r; qi=st.q; score=st.s; G.querySelector('.g-end').hidden=true; G.querySelector('.g-stage').hidden=false; ask(); return}
+    load(G.dataset.src,function(d){if(cat)d=d.filter(function(x){return x.s===cat}); round=shuffle(d).slice(0,Math.min(N,d.length)); qi=0; score=0; lsSet('bg-g1',{r:round,q:0,s:0});
     G.querySelector('.g-end').hidden=true; G.querySelector('.g-stage').hidden=false; ask()})}
   function ask(){cur=round[qi];
     G.querySelector('.g-score').textContent='Вопрос '+(qi+1)+' из '+round.length+' · угадано '+score;
@@ -83,9 +93,9 @@ if(G){
     G.querySelector('.g-ans').hidden=true; G.querySelectorAll('.g-opts button').forEach(function(b){b.disabled=false;b.className=''});
   }
   function end(){var n=round.length, t=score===n?'ты знаешь Флориду лучше Rockstar 🔥':score>=n*0.8?'отлично, ты почти местный во Флориде!':score>=n*0.5?'неплохо, но Rockstar пару раз тебя провела.':'Rockstar обвела тебя вокруг пальца. Попробуй ещё раз!';
-    finish(G,score,n,t,'Я угадал '+score+' из '+n+' в игре «Скопировали или придумали?» — GTA 6 и реальность',start)}
+    lsSet('bg-g1',null); finish(G,score,n,t,'Я угадал '+score+' из '+n+' в игре «Скопировали или придумали?» — GTA 6 и реальность',start)}
   G.querySelector('.g-opts').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b||!cur||b.disabled)return;
-    var ok=b.dataset.v===cur.v; if(ok)score++;
+    var ok=b.dataset.v===cur.v; if(ok)score++; lsSet('bg-g1',{r:round,q:qi+1,s:score});
     G.querySelectorAll('.g-opts button').forEach(function(x){x.disabled=true; if(x.dataset.v===cur.v)x.className='right'; else if(x===b)x.className='wrong'});
     var a=G.querySelector('.g-ans'); a.hidden=false; var last=qi>=round.length-1;
     a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Правильный ответ — «<b style="color:'+VC[cur.v]+'">'+esc(cur.vn)+'</b>».</p><p class="g-why"><b>Почему «'+esc(cur.vn)+'»:</b> '+esc(cur.why)+'</p>'+(cur.cr?'<p class="g-cr">Реальное фото: '+esc(cur.cr.replace(/^Фото: /,''))+'</p>':'')+'<div class="g-btns"><a class="btn btn2" href="'+BASE+cur.u+'">Читать сравнение →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
@@ -94,16 +104,18 @@ if(G){
   });
   var GC=G.querySelector('.g-cat');
   if(GC)GC.addEventListener('click',function(e){var b=e.target.closest('button'); if(!b)return; cat=b.dataset.s;
-    GC.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)}); start()});
-  whenSeen(G,start);
+    GC.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b)}); start(true)});
+  whenSeen(G,function(){start()});
 }
 
 /* игра 2: «Кто или где это?» (справочник) */
 var H=document.querySelector('.game2');
 if(H){
   var R2=[], i2=0, s2=0, c2=null, ALL=[];
-  function start2(){load(H.dataset.src,function(d){ALL=d; var seen={}, pool=shuffle(d).filter(function(x){if(seen[x.a]>=2)return false; seen[x.a]=(seen[x.a]||0)+1; return true});
-    R2=pool.slice(0,Math.min(10,pool.length)); i2=0; s2=0; H.querySelector('.g-end').hidden=true; H.querySelector('.g-stage').hidden=false; ask2()})}
+  function start2(fresh){var st=fresh?null:lsGet('bg-g2');
+    if(st&&st.r&&st.q<st.r.length){load(H.dataset.src,function(d){ALL=d; R2=st.r; i2=st.q; s2=st.s; H.querySelector('.g-end').hidden=true; H.querySelector('.g-stage').hidden=false; ask2()}); return}
+    load(H.dataset.src,function(d){ALL=d; var seen={}, pool=shuffle(d).filter(function(x){if(seen[x.a]>=2)return false; seen[x.a]=(seen[x.a]||0)+1; return true});
+    R2=pool.slice(0,Math.min(10,pool.length)); i2=0; s2=0; lsSet('bg-g2',{r:R2,q:0,s:0}); H.querySelector('.g-end').hidden=true; H.querySelector('.g-stage').hidden=false; ask2()})}
   function ask2(){c2=R2[i2];
     H.querySelector('.g-score').textContent='Вопрос '+(i2+1)+' из '+R2.length+' · угадано '+s2;
     H.querySelector('.g2-img').innerHTML='<img src="'+IMG(c2.i)+'" alt="Кадр GTA 6">';
@@ -114,7 +126,7 @@ if(H){
     H.querySelector('.g-ans').hidden=true;
   }
   H.querySelector('.g2-opts').addEventListener('click',function(e){var b=e.target.closest('button'); if(!b||!c2||b.disabled)return;
-    var ok=b.dataset.a===c2.a; if(ok)s2++;
+    var ok=b.dataset.a===c2.a; if(ok)s2++; lsSet('bg-g2',{r:R2,q:i2+1,s:s2});
     H.querySelectorAll('.g2-opts button').forEach(function(x){x.disabled=true; if(x.dataset.a===c2.a)x.className='right'; else if(x===b)x.className='wrong'});
     var a=H.querySelector('.g-ans'); a.hidden=false; var last=i2>=R2.length-1;
     a.innerHTML='<p class="g-res">'+(ok?'✓ Верно!':'✗ Не угадали.')+' Это — <b>'+esc(c2.a)+'</b>.</p><p class="g-why">'+esc(c2.d)+'</p><div class="g-btns"><a class="btn btn2" href="'+BASE+c2.u+'">Открыть в справочнике →</a><button class="btn g-nx" type="button">'+(last?'Узнать результат →':'Следующий вопрос →')+'</button></div>';
@@ -122,8 +134,8 @@ if(H){
     a.querySelector('.g-nx').addEventListener('click',function(){this.blur(); if(last)end2(); else{i2++;ask2()} toTop(H)});
   });
   function end2(){var n=R2.length, t=s2===n?'ты знаешь Леониду наизусть 🔥':s2>=n*0.8?'отлично, к релизу готов!':s2>=n*0.5?'неплохо — загляни в справочник перед релизом.':'самое время изучить справочник!';
-    finish(H,s2,n,t,'Я угадал '+s2+' из '+n+' в игре «Кто или где это?» — справочник GTA 6',start2)}
-  whenSeen(H,start2);
+    lsSet('bg-g2',null); finish(H,s2,n,t,'Я угадал '+s2+' из '+n+' в игре «Кто или где это?» — справочник GTA 6',start2)}
+  whenSeen(H,function(){start2()});
 }
 
 /* появление блоков при прокрутке */
