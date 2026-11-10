@@ -329,3 +329,5 @@ figcaption b{color:var(--acc)}
 .gbody .game{margin-top:0}
 .gclose{display:block;margin:16px auto 0}
 @media(max-width:640px){.gopen{flex-wrap:wrap;padding:18px}.gopen .gi{font-size:30px}.gopen .ga{width:100%;text-align:center}}
+.gopen.on .ga{background:#2a2a35;border:1px solid #C645F0}
+.gbody[hidden]{display:none!important}

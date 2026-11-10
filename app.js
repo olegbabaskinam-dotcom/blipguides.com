@@ -72,9 +72,10 @@ function whenSeen(el,fn){ if(!('IntersectionObserver' in window)) return fn();
 
 /* свёрнутые игры: «Сыграть» / «Свернуть», состояние в браузере */
 document.querySelectorAll('.gfold').forEach(function(f){var k='bg-fold-'+f.dataset.k,b=f.querySelector('.gbody'),o=f.querySelector('.gopen'),c=f.querySelector('.gclose');
-  function set(v,save){b.hidden=!v; o.hidden=v; if(save)try{localStorage.setItem(k,v?'1':'0')}catch(e){}}
+  var on=false;
+  function set(v,save){on=v; b.hidden=!v; o.classList.toggle('on',v); o.setAttribute('aria-expanded',v?'true':'false'); o.querySelector('.ga').textContent=v?'Свернуть ▲':'Играть ▼'; if(save)try{localStorage.setItem(k,v?'1':'0')}catch(e){}}
   var v=false; try{v=localStorage.getItem(k)==='1'}catch(e){} set(v);
-  o.addEventListener('click',function(){set(true,1)}); c.addEventListener('click',function(){set(false,1); toTop(f)});
+  o.addEventListener('click',function(){set(!on,1)}); c.addEventListener('click',function(){set(false,1); toTop(f)});
 });
 function lsGet(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}}
 function lsSet(k,v){try{if(v===null)localStorage.removeItem(k);else localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
