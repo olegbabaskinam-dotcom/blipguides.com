@@ -358,3 +358,21 @@ figcaption b{color:var(--acc)}
 
 /* 19.11 релиз: чек-листы, коды читов, навигация миссий */
 .chk{list-style:none;padding:0;margin:0 0 1.5em}.chk li{display:flex;gap:.7em;align-items:flex-start;padding:.6em .2em;border-bottom:1px solid rgba(127,127,127,.25)}.chk input{width:1.3em;height:1.3em;margin-top:.15em;flex:none;accent-color:#C645F0}.chk label{cursor:pointer}.chk label b{display:block}.chk label span{opacity:.75;font-size:.92em}.chk li.on label b{text-decoration:line-through;opacity:.6}.cbar{position:sticky;top:0;z-index:5;background:var(--bg,#0d0d12);padding:.6em 0;margin:1em 0}.cbar .tr{height:10px;border-radius:5px;background:rgba(127,127,127,.25);overflow:hidden}.cbar .fl{height:100%;width:0;background:#C645F0;transition:width .3s}.cbar p{margin:.3em 0 0;font-size:.95em}.creset{margin-top:.5em;font-size:.85em;background:none;border:1px solid rgba(127,127,127,.5);color:inherit;border-radius:6px;padding:.3em .8em;cursor:pointer}.code{font-family:monospace;white-space:nowrap;letter-spacing:.05em}.spo{opacity:.6;font-style:italic}.mnav{display:flex;justify-content:space-between;gap:1em;flex-wrap:wrap;margin:2em 0;font-weight:600}
+
+/* ── 21.11.2026: интерактивная карта Леониды ── */
+.lmap{margin:18px 0 26px}
+.lm-bar,.lm-sub{display:flex;gap:8px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:thin}
+.lm-bar button,.lm-sub button{flex:0 0 auto;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:inherit;border-radius:999px;padding:8px 14px;font:600 14px/1 inherit;cursor:pointer;white-space:nowrap;display:flex;align-items:center;gap:7px}
+.lm-bar button i{width:10px;height:10px;border-radius:50%;display:inline-block}
+.lm-bar button small{opacity:.6;font-weight:500}
+.lm-bar button.on,.lm-sub button.on{background:#C645F0;border-color:#C645F0;color:#fff}
+.lm-sub button{padding:6px 12px;font-size:13px}
+.lm-map{height:560px;border-radius:14px;overflow:hidden;background:#29b6d6}
+.lmap.sm .lm-map{height:340px}
+.lm-note{font-size:12px;opacity:.6;margin:8px 0 0}
+.leaflet-popup-content{font:14px/1.4 Manrope,system-ui,sans-serif;color:#111}
+.leaflet-popup-content span{opacity:.75}
+.leaflet-popup-content em{font-size:12px;opacity:.6}
+.leaflet-popup-content a{color:#8a1fb0;font-weight:700}
+@media(max-width:700px){.lm-map{height:460px}.lmap.sm .lm-map{height:300px}}
+.lm-map.leaflet-container{background:#29b6d6}
