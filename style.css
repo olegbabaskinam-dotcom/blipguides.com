@@ -387,3 +387,4 @@ figcaption b{color:var(--acc)}
 .qsb:disabled{opacity:0;pointer-events:none}
 @media(max-width:1000px){.qrow .card{flex-basis:calc((100% - 24px)/3)}}
 @media(max-width:600px){.qrow .card{flex-basis:calc((100% - 12px)/2.3)}.qsb{top:48px;width:36px;height:36px;font-size:22px}.qsp{left:-6px}.qsn{right:-6px}}
+.leaflet-popup-content .lm-ph{display:block;width:220px;height:124px;object-fit:cover;border-radius:8px;margin:0 0 8px}

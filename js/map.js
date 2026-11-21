@@ -31,35 +31,45 @@ function build(box,D){
   var used={};D.m.forEach(function(m){used[m.c]=(used[m.c]||0)+1});
   var list=(only||cats.map(function(c){return c.k})).filter(function(k){return used[k]});
   function btn(k,t,n,col){var b=document.createElement('button');b.type='button';b.dataset.k=k;b.innerHTML=(col?'<i style="background:'+col+'"></i>':'')+esc(t)+(n?' <small>'+n+'</small>':'');bar.appendChild(b);return b}
-  var buttons=[btn('','Без меток')];
+  var buttons=[btn('','Без меток'),btn('*','Все метки')];
   list.forEach(function(k){buttons.push(btn(k,CM[k].n,used[k],CM[k].col))});
-  var subbar=null;
-  function show(k){
-    buttons.forEach(function(b){b.classList.toggle('on',b.dataset.k===k)});var _a=bar.querySelector('.on');if(_a)bar.scrollLeft=Math.max(0,_a.offsetLeft-bar.offsetLeft-12);
-    layer.clearLayers(); if(subbar){subbar.remove();subbar=null}
-    if(!k)return;
-    var per=box.dataset.p||'';var ms=D.m.filter(function(m){return m.c===k&&(!pin||m.u===pin)&&(!per||(m.p||[]).indexOf(per)>=0)});
-    var groups=[];ms.forEach(function(m){if(m.g&&groups.indexOf(m.g)<0)groups.push(m.g)});
-    var cur=(sub&&groups.indexOf(sub)>=0)?sub:'';
-    if(groups.length>1&&!pin){
-      subbar=document.createElement('div');subbar.className='lm-sub';bar.after(subbar);
-      ['Все'].concat(groups).forEach(function(g){var b=document.createElement('button');b.type='button';b.textContent=g;if((g==='Все'&&!cur)||g===cur)b.className='on';
-        b.onclick=function(){cur=g==='Все'?'':g;[].forEach.call(subbar.children,function(x){x.classList.toggle('on',x===b)});draw()};subbar.appendChild(b)});
-    }
-    function draw(){
-      layer.clearLayers();var c=CM[k];
-      ms.forEach(function(m){if(cur&&m.g!==cur)return;
-        var shape=m.r?L.circle(ll(m.x,m.y),{radius:m.r,color:c.col,weight:1,fillOpacity:.25}):L.circleMarker(ll(m.x,m.y),{radius:pin?9:7,color:'#fff',weight:2,fillColor:c.col,fillOpacity:1});
-        var h='<b>'+esc(m.n)+'</b>'+(m.d?'<br><span>'+esc(m.d)+'</span>':'')+(m.a?'<br><em>примерно — по району</em>':'')+(m.u?'<br><a href="/'+m.u+'">Подробнее →</a>':'');
-        shape.bindPopup(h).addTo(layer)});
-      if(pin&&ms[0]){map.setView(ll(ms[0].x,ms[0].y),.5)}
-    }
-    draw();
-    try{if(box.dataset.home){var u=new URL(location);if(k)u.searchParams.set('map',k);else u.searchParams.delete('map');history.replaceState(null,'',u)}}catch(e){}
+  var sel=[],subbar=null,cur='';
+  function popup(m){return (m.i?'<img class="lm-ph" src="/img/'+m.i+'-sm.jpg" alt="'+esc(m.n)+'" loading="lazy">':'')+'<b>'+esc(m.n)+'</b>'+(m.d?'<br><span>'+esc(m.d)+'</span>':'')+(m.a?'<br><em>примерно — по району</em>':'')+(m.u?'<br><a href="/'+m.u+'">Подробнее →</a>':'')}
+  function pick(){var per=box.dataset.p||'';return D.m.filter(function(m){return sel.indexOf(m.c)>=0&&(!pin||m.u===pin)&&(!per||(m.p||[]).indexOf(per)>=0)})}
+  function draw(){
+    layer.clearLayers();var ms=pick();
+    ms.forEach(function(m){if(cur&&m.g!==cur)return;var c=CM[m.c],h=popup(m);
+      if(m.poly){L.polygon(m.poly.map(function(q){return ll(q[0],q[1])}),{color:c.col,weight:2,fillOpacity:.18,dashArray:'6 4'}).bindPopup(h,{maxWidth:240}).addTo(layer)}
+      else if(m.r){L.circle(ll(m.x,m.y),{radius:m.r,color:c.col,weight:2,fillOpacity:.18,dashArray:'6 4'}).bindPopup(h,{maxWidth:240}).addTo(layer)}
+      L.circleMarker(ll(m.x,m.y),{radius:pin?9:7,color:'#fff',weight:2,fillColor:c.col,fillOpacity:1}).bindPopup(h,{maxWidth:240}).addTo(layer)});
+    if(pin&&ms[0]){map.setView(ll(ms[0].x,ms[0].y),.5)}
   }
-  buttons.forEach(function(b){b.onclick=function(){show(b.dataset.k)}});
+  function render(){
+    var all=sel.length===list.length;
+    buttons.forEach(function(b){var k=b.dataset.k;b.classList.toggle('on',k===''?!sel.length:k==='*'?all&&list.length>1:sel.indexOf(k)>=0)});
+    if(subbar){subbar.remove();subbar=null}
+    if(sel.length===1&&!pin){
+      var groups=[];pick().forEach(function(m){if(m.g&&groups.indexOf(m.g)<0)groups.push(m.g)});
+      if(cur&&groups.indexOf(cur)<0)cur='';
+      if(groups.length>1){
+        subbar=document.createElement('div');subbar.className='lm-sub';bar.after(subbar);
+        ['Все'].concat(groups).forEach(function(g){var b=document.createElement('button');b.type='button';b.textContent=g;if((g==='Все'&&!cur)||g===cur)b.className='on';
+          b.onclick=function(){cur=g==='Все'?'':g;[].forEach.call(subbar.children,function(x){x.classList.toggle('on',x===b)});draw()};subbar.appendChild(b)});
+      }
+    }else cur='';
+    draw();
+    try{if(box.dataset.home){var u=new URL(location);if(sel.length)u.searchParams.set('map',all?'all':sel.join(','));else u.searchParams.delete('map');history.replaceState(null,'',u)}}catch(e){}
+  }
+  buttons.forEach(function(b){b.onclick=function(){var k=b.dataset.k;
+    if(k==='')sel=[];else if(k==='*')sel=list.slice();
+    else{var i=sel.indexOf(k);if(i>=0)sel.splice(i,1);else sel.push(k)}
+    cur='';render()}});
   var q='';try{q=new URLSearchParams(location.search).get('map')||''}catch(e){}
-  show(box.dataset.home&&q&&used[q]?q:start);
+  if(box.dataset.home&&q){sel=q==='all'?list.slice():q.split(',').filter(function(k){return list.indexOf(k)>=0})}
+  else if(start)sel=start.split(',').filter(function(k){return list.indexOf(k)>=0});
+  if(sub&&sel.length===1)cur=sub;
+  render();
+  var _a=bar.querySelector('button.on:not([data-k=""])');if(_a)bar.scrollLeft=Math.max(0,_a.offsetLeft-bar.offsetLeft-12);
 }
 function boot(){
   var boxes=document.querySelectorAll('.lmap');if(!boxes.length)return;
