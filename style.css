@@ -376,3 +376,14 @@ figcaption b{color:var(--acc)}
 .leaflet-popup-content a{color:#8a1fb0;font-weight:700}
 @media(max-width:700px){.lm-map{height:460px}.lmap.sm .lm-map{height:300px}}
 .lm-map.leaflet-container{background:#29b6d6}
+
+/* 22.11.2026: «Быстрые ответы» — одна строка с прокруткой и стрелками */
+.qs{position:relative;margin-bottom:48px}
+.arts.qa.qrow{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:12px;margin:0;padding-bottom:6px;scrollbar-width:none}
+.arts.qa.qrow::-webkit-scrollbar{display:none}
+.qrow .card{flex:0 0 calc((100% - 48px)/5);scroll-snap-align:start}
+.qsb{position:absolute;top:70px;z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(15,15,22,.85);color:#fff;font-size:26px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.qsp{left:-18px}.qsn{right:-18px}
+.qsb:disabled{opacity:0;pointer-events:none}
+@media(max-width:1000px){.qrow .card{flex-basis:calc((100% - 24px)/3)}}
+@media(max-width:600px){.qrow .card{flex-basis:calc((100% - 12px)/2.3)}.qsb{top:48px;width:36px;height:36px;font-size:22px}.qsp{left:-6px}.qsn{right:-6px}}
